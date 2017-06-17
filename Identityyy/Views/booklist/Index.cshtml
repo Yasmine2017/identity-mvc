@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Identityyy.Models.listbook>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Books</h2>
+
+<div id="OrderList">
+
+</div>
+@section Scripts{
+
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+
+}
+
+
+<div class="row">
+
+
+    @foreach (var item in Model)
+    {
+        <div class="col-md-4">
+
+            @Html.DisplayFor(modelItem => item.namebook)
+            <img src="@item.cover" style="display:block;width:150px;height:200px" />
+
+
+            @Html.DisplayFor(modelItem => item.decbook)
+
+            @Html.DisplayFor(modelItem => item.price)
+
+            @Ajax.ActionLink("Reatal", "Borrowingbooks", new { item.id },
+       new AjaxOptions
+       {
+           UpdateTargetId = "OrderList",
+           InsertionMode = InsertionMode.Replace
+       }, new { @class = "btn btn-primary" })
+            </div>
+
+    }
+    </div>

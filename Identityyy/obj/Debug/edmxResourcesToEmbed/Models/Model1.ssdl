@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="bookModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="listbook">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="namebook" Type="nchar" MaxLength="30" />
+    <Property Name="decbook" Type="nchar" MaxLength="100" />
+    <Property Name="price" Type="float" />
+    <Property Name="cover" Type="nchar" MaxLength="100" />
+  </EntityType>
+  <EntityContainer Name="bookModelStoreContainer">
+    <EntitySet Name="listbook" EntityType="Self.listbook" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

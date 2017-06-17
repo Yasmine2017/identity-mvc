@@ -1,0 +1,36 @@
+﻿@model IEnumerable<Identityyy.VM.bookajax>
+
+@{
+    ViewBag.Title = "_GetORderList";
+}
+
+<h2>Booking</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.namebook)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cover)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.namebook)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cover)
+        </td>
+        <td>
+          
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
